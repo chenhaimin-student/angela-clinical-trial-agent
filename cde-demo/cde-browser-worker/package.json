@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "chrome-remote-interface": "^0.33.3",
-    "fastify": "^5.2.1",
+    "fastify": "^5.12.1",
     "yaml": "^2.7.0",
     "zod": "^3.24.2"
   },
