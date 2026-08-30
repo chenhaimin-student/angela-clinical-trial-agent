@@ -19,7 +19,7 @@ jobs:
       PYTHONPATH: ${{ github.workspace }}:${{ github.workspace }}/cde-data:${{ github.workspace }}/cde-demo:${{ github.workspace }}/services/session-compactor
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python-version }}
           cache: pip
