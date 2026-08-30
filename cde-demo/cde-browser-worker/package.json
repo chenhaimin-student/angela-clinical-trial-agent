@@ -11,13 +11,13 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "chrome-remote-interface": "^0.33.3",
+    "chrome-remote-interface": "^0.34.0",
     "fastify": "^5.2.1",
     "yaml": "^2.7.0",
     "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@types/chrome-remote-interface": "^0.31.14",
+    "@types/chrome-remote-interface": "^0.34.0",
     "@types/node": "^22.10.7",
     "playwright": "1.55.0",
     "tsx": "^4.19.2",
