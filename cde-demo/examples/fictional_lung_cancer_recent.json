@@ -1,0 +1,15 @@
+{
+  "scenario": "虚构病例，仅用于功能演示",
+  "patient": {
+    "age": 40,
+    "sex": "male",
+    "blood_type": "A",
+    "condition_terms": ["肺癌"],
+    "pathology_terms": [],
+    "prior_treatments": [],
+    "region": null
+  },
+  "query_terms": ["肺癌"],
+  "published_after": "2026-02-06",
+  "max_results": 3
+}

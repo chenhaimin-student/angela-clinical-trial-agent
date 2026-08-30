@@ -1,0 +1,12 @@
+{
+  "patient": {
+    "age": 56,
+    "sex": "female",
+    "condition_terms": ["肺腺癌"],
+    "pathology_terms": ["EGFR"],
+    "prior_treatments": ["一线治疗"],
+    "region": "上海"
+  },
+  "query_terms": ["肺腺癌", "EGFR"],
+  "max_results": 3
+}

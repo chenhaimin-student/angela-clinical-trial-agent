@@ -1,0 +1,15 @@
+{
+  "scenario": "虚构病例，仅用于功能演示",
+  "patient": {
+    "age": 40,
+    "sex": "male",
+    "blood_type": "A",
+    "condition_terms": ["双相情感障碍"],
+    "pathology_terms": [],
+    "prior_treatments": [],
+    "region": null
+  },
+  "query_terms": ["双相情感障碍"],
+  "published_after": "2026-05-06",
+  "max_results": 3
+}

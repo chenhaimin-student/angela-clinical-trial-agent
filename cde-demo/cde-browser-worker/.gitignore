@@ -1,0 +1,7 @@
+node_modules/
+dist/
+data/chrome-profile/
+config/*.local.yaml
+screenshots/
+tmp/
+*.response.json

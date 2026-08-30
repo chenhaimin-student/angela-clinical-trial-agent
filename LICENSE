@@ -1,0 +1,16 @@
+Portfolio Source-Available License 1.0
+
+Copyright (c) 2026 the repository owner
+
+Permission is granted to view, download, copy, and modify the Angela-authored source code in this repository for personal learning, security review, non-commercial evaluation, and private portfolio assessment.
+
+The following are not permitted without separate written permission from the copyright holder:
+
+1. commercial use, paid services, or production deployment;
+2. redistribution of the source or modified versions as a competing product;
+3. sublicensing, relicensing, or removing copyright and attribution notices;
+4. using the project, its outputs, or its name to claim medical-device status, clinical validation, diagnostic capability, or authority to make final clinical-trial enrollment decisions.
+
+This license applies only to code and documentation authored for Angela. Third-party components, interfaces, names, and patches remain subject to their own licenses and notices. See THIRD_PARTY_NOTICES.md.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT, ACCURACY, AVAILABILITY, OR FITNESS FOR CLINICAL USE. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM THE SOFTWARE OR ITS USE.

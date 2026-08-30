@@ -1,0 +1,37 @@
+name: Python CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    env:
+      PYTHONPATH: ${{ github.workspace }}:${{ github.workspace }}/cde-data:${{ github.workspace }}/cde-demo:${{ github.workspace }}/services/session-compactor
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -r requirements.txt
+      - name: MCP tests
+        run: python -m unittest discover -s hermes-cde-tool/tests -p "test_*.py"
+      - name: Data layer tests
+        run: python -m unittest discover -s cde-data/tests -p "test_*.py"
+      - name: Orchestration tests
+        run: python -m unittest discover -s tests -p "test_*.py"
+      - name: Session Compactor tests
+        run: python -m unittest discover -s services/session-compactor/tests -p "test_*.py"
+      - name: Compile Python sources
+        run: python -m compileall -q angela_orchestration cde-data/cde_store cde-demo/cde_demo hermes-cde-tool quality_eval services/session-compactor

@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "concepts": [
+    {
+      "canonical": "系统性红斑狼疮",
+      "synonyms": ["SLE", "systemic lupus erythematosus", "lupus", "红斑狼疮", "狼疮"],
+      "related": ["皮肤型红斑狼疮", "CLE"]
+    },
+    {
+      "canonical": "肺癌",
+      "synonyms": ["肺恶性肿瘤", "肺部恶性肿瘤"],
+      "related": ["非小细胞肺癌", "NSCLC", "小细胞肺癌", "SCLC", "肺腺癌", "肺鳞癌"]
+    },
+    {
+      "canonical": "非小细胞肺癌",
+      "synonyms": ["NSCLC", "non-small cell lung cancer"],
+      "related": ["肺腺癌", "肺鳞癌"],
+      "parent": "肺癌"
+    },
+    {
+      "canonical": "肺腺癌",
+      "synonyms": ["lung adenocarcinoma"],
+      "related": [],
+      "parent": "非小细胞肺癌"
+    },
+    {
+      "canonical": "抑郁症",
+      "synonyms": ["抑郁障碍"],
+      "related": ["重性抑郁障碍", "MDD"]
+    },
+    {
+      "canonical": "重性抑郁障碍",
+      "synonyms": ["MDD", "major depressive disorder"],
+      "related": ["抑郁症", "抑郁障碍"],
+      "parent": "抑郁症"
+    },
+    {
+      "canonical": "双相情感障碍",
+      "synonyms": ["双相障碍", "躁郁症", "bipolar disorder"],
+      "related": ["双相抑郁"]
+    },
+    {
+      "canonical": "哮喘",
+      "synonyms": ["asthma"],
+      "related": []
+    },
+    {
+      "canonical": "类风湿关节炎",
+      "synonyms": ["类风湿", "rheumatoid arthritis", "RA"],
+      "related": []
+    },
+    {
+      "canonical": "慢性阻塞性肺疾病",
+      "synonyms": ["慢阻肺", "COPD", "chronic obstructive pulmonary disease"],
+      "related": []
+    },
+    {
+      "canonical": "2型糖尿病",
+      "synonyms": ["二型糖尿病", "type 2 diabetes", "type 2 diabetes mellitus", "T2DM"],
+      "related": []
+    },
+    {
+      "canonical": "HER2阳性乳腺癌",
+      "synonyms": ["HER2-positive breast cancer", "HER2 positive breast cancer"],
+      "related": [],
+      "parent": "乳腺癌",
+      "preserve_specificity": true
+    }
+  ]
+}

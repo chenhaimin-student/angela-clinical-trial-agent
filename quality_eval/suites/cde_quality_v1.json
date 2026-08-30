@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "suite_id": "cde-quality-v1",
+  "description": "基于正式CDE SQLite数据库的信息解析、检索契约与返回字段自动验收集。",
+  "reference_date": "2026-08-21",
+  "thresholds": {
+    "ctr_existence_rate": 1.0,
+    "status_compliance_rate": 1.0,
+    "database_criteria_coverage": 0.99,
+    "fact_trace_rate": 0.95,
+    "retrieval_precision": 1.0,
+    "retrieval_recall_at_k": 0.85,
+    "raw_total_count_accuracy": 1.0,
+    "source_field_fidelity": 1.0,
+    "explicit_conflict_leakage_rate_max": 0.0
+  },
+  "cases": [
+    {
+      "case_id": "sle_adult_basic",
+      "prompt": "男性，55岁，SLE，帮我查当前可招募的临床试验。",
+      "search": {"disease": "SLE", "raw_disease": "SLE", "canonical_disease": "系统性红斑狼疮", "age": 55, "sex": "male", "max_results": 5},
+      "expected_facts": {"age": 55, "sex": "male", "diseases": ["SLE"]}
+    },
+    {
+      "case_id": "sle_child_duration",
+      "prompt": "2019年出生，女，SLE 2年病史，给我临床研究线索。",
+      "search": {"disease": "SLE", "raw_disease": "SLE", "canonical_disease": "系统性红斑狼疮", "sex": "female", "birth_year": 2019, "disease_duration_months": 24, "max_results": 5},
+      "expected_facts": {"birth_year": 2019, "sex": "female", "disease_duration_months": 24, "diseases": ["SLE"]}
+    },
+    {
+      "case_id": "lung_kras_progression",
+      "prompt": "男性，58岁，非小细胞肺癌，KRAS G12C突变，含铂化疗后进展。",
+      "search": {"disease": "非小细胞肺癌", "raw_disease": "非小细胞肺癌", "canonical_disease": "非小细胞肺癌", "age": 58, "sex": "male", "biomarkers": ["KRAS G12C突变"], "prior_treatments": ["含铂化疗"], "disease_statuses": ["进展"], "max_results": 5},
+      "expected_facts": {"age": 58, "sex": "male", "biomarkers": ["KRAS G12C突变"], "prior_treatments": ["含铂化疗"], "disease_statuses": ["进展"]}
+    },
+    {
+      "case_id": "breast_her2_treated",
+      "prompt": "女性，42岁，HER2阳性乳腺癌，既往曲妥珠单抗治疗，肝功能轻度异常，上海。",
+      "search": {"disease": "HER2阳性乳腺癌", "raw_disease": "HER2阳性乳腺癌", "canonical_disease": "HER2阳性乳腺癌", "preserve_specificity": true, "age": 42, "sex": "female", "city": "上海", "biomarkers": ["HER2阳性"], "prior_treatments": ["曲妥珠单抗治疗"], "organ_function_findings": ["肝功能轻度异常"], "max_results": 5},
+      "expected_facts": {"age": 42, "sex": "female", "city": "上海", "biomarkers": ["HER2阳性"], "prior_treatments": ["曲妥珠单抗治疗"], "organ_function_findings": ["肝功能轻度异常"]}
+    },
+    {
+      "case_id": "depression_two_drugs",
+      "prompt": "女性，35岁，重度抑郁症，既往两种抗抑郁药疗效不佳。",
+      "search": {"disease": "抑郁症", "raw_disease": "抑郁症", "canonical_disease": "抑郁症", "age": 35, "sex": "female", "prior_treatments": ["既往两种抗抑郁药疗效不佳"], "disease_statuses": ["疗效不佳"], "max_results": 5},
+      "expected_facts": {"age": 35, "sex": "female", "prior_treatments": ["两种抗抑郁药"], "disease_statuses": ["疗效不佳"]}
+    },
+    {
+      "case_id": "diabetes_shanghai_recent",
+      "prompt": "男性，60岁，2型糖尿病，上海，近半年有哪些项目？",
+      "search": {"disease": "2型糖尿病", "raw_disease": "2型糖尿病", "canonical_disease": "2型糖尿病", "age": 60, "sex": "male", "city": "上海", "lookback_months": 6, "max_results": 5},
+      "expected_facts": {"age": 60, "sex": "male", "city": "上海", "lookback_months": 6, "diseases": ["2型糖尿病"]}
+    },
+    {
+      "case_id": "copd_northeast",
+      "prompt": "65岁男性，慢性阻塞性肺疾病，东北地区，查招募项目。",
+      "search": {"disease": "慢性阻塞性肺疾病", "raw_disease": "慢性阻塞性肺疾病", "canonical_disease": "慢性阻塞性肺疾病", "age": 65, "sex": "male", "region": "东北", "max_results": 5},
+      "expected_facts": {"age": 65, "sex": "male", "region": "东北", "diseases": ["慢性阻塞性肺疾病"]}
+    },
+    {
+      "case_id": "schizophrenia_adult",
+      "prompt": "30岁女性，精神分裂症，想了解可招募临床研究。",
+      "search": {"disease": "精神分裂症", "raw_disease": "精神分裂症", "canonical_disease": "精神分裂症", "age": 30, "sex": "female", "max_results": 5},
+      "expected_facts": {"age": 30, "sex": "female", "diseases": ["精神分裂症"]}
+    },
+    {
+      "case_id": "atopic_dermatitis_child",
+      "prompt": "10岁男孩，特应性皮炎，找临床试验。",
+      "search": {"disease": "特应性皮炎", "raw_disease": "特应性皮炎", "canonical_disease": "特应性皮炎", "age": 10, "sex": "male", "max_results": 5},
+      "expected_facts": {"age": 10, "sex": "male", "diseases": ["特应性皮炎"]}
+    },
+    {
+      "case_id": "multiple_myeloma_treated",
+      "prompt": "男性，68岁，多发性骨髓瘤，既往多线治疗，查询项目。",
+      "search": {"disease": "多发性骨髓瘤", "raw_disease": "多发性骨髓瘤", "canonical_disease": "多发性骨髓瘤", "age": 68, "sex": "male", "treatment_line": "多线治疗", "prior_treatments": ["既往多线治疗"], "max_results": 5},
+      "expected_facts": {"age": 68, "sex": "male", "treatment_line": "多线治疗", "prior_treatments": ["多线治疗"]}
+    },
+    {
+      "case_id": "rheumatoid_female",
+      "prompt": "45岁女性，类风湿关节炎，看看当前招募研究。",
+      "search": {"disease": "类风湿关节炎", "raw_disease": "类风湿关节炎", "canonical_disease": "类风湿关节炎", "age": 45, "sex": "female", "max_results": 5},
+      "expected_facts": {"age": 45, "sex": "female", "diseases": ["类风湿关节炎"]}
+    },
+    {
+      "case_id": "pulmonary_fibrosis_male",
+      "prompt": "70岁男性，特发性肺纤维化，北京，查询临床试验。",
+      "search": {"disease": "特发性肺纤维化", "raw_disease": "特发性肺纤维化", "canonical_disease": "特发性肺纤维化", "age": 70, "sex": "male", "city": "北京", "max_results": 5},
+      "expected_facts": {"age": 70, "sex": "male", "city": "北京", "diseases": ["特发性肺纤维化"]}
+    }
+  ]
+}

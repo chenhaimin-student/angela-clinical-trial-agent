@@ -1,0 +1,82 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Python runtimes and caches
+.venv/
+.venv-*/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# JavaScript dependencies and build output
+node_modules/
+dist/
+build/
+coverage/
+
+# Runtime state and generated data
+.isolated/
+.quality-eval/
+.runtime/
+logs/
+*.log
+*.pid
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.db
+session-compactor.db*
+services/session-compactor/*.pid
+services/session-compactor/*.log
+raw/
+raw-*-test/
+database/
+tmp/
+screenshots/
+data/chrome-profile/
+**/data/chrome-profile/
+**/data/batch-chrome-profile/
+**/tools/
+**/reports/
+**/config/worker.demo.yaml
+*.response.json
+*.jsonl
+
+# CDE collection data (databases, raw HTML, browser profiles and retry state)
+cde-data/data/
+cde-data/production/
+cde-data/retry-staging/
+cde-data/raw/
+cde-data/raw-*/
+cde-data/database/
+cde-data/backups/
+cde-data/batch-worker.log
+
+# Demo-generated artifacts and local browser runtime
+cde-demo/reports/
+cde-demo/examples/worker_diagnostic_*.json
+cde-demo/cde-browser-worker/worker.log
+cde-demo/cde-browser-worker/worker.pid
+
+# Local backups and pre-change copies
+backups/
+*.bak
+*.bak-*
+*.before-*.bak
+*.broken-*.bak
+config.yaml
+hermes-config-*.yaml
+
+# OS/editor files
+.DS_Store
+.idea/
+.vscode/
