@@ -2,5 +2,5 @@
 # Browser Worker dependencies are managed separately by pnpm.
 beautifulsoup4==4.15.0
 mcp>=1.0,<2
-openai>=2.24,<3
+openai>=3.31.0,<4
 PyYAML>=6,<7
